@@ -7,9 +7,6 @@ public class UserData {
     private String last_name;
     private String avatar;
 
-    /**
-     * Конструктор
-     */
     public UserData(Integer id, String email, String first_name, String last_name, String avatar) {
         this.id = id;
         this.email = email;
@@ -17,10 +14,7 @@ public class UserData {
         this.last_name = last_name;
         this.avatar = avatar;
     }
-
-    /**
-     * Getter
-     */
+    public UserData(){}
     public Integer getId() {
         return id;
     }

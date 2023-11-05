@@ -1,6 +1,7 @@
 package Api;
 
 import io.restassured.http.ContentType;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -18,5 +19,6 @@ public class RecresTest {
                 .get(URL + "/api/users?page=2")
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", UserData.class);
+        users.forEach(x -> Assert.assertTrue(x.getAvatar().contains(x.getId().toString())));
     }
 }
